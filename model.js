@@ -1,3 +1,4 @@
+//Dette er et objekt
 var pizzaDiv = {
     bread:'',
     fill:'',

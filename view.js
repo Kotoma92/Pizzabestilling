@@ -8,8 +8,8 @@ function updateView() {
     <div style="padding-bottom: 20px;">Gjør ett valg på hver linje:</div>
 
     Bunn: 
-    <input type="radio" name="bunn" ${pizzaDiv.bread === 'Tykk' ? 'checked' : ''} onclick="setBread('Tykk')" />Tykk
-    <input type="radio" name="bunn" ${pizzaDiv.bread === 'Tynn' ? 'checked' : ''} onclick="setBread('Tynn')" />Tynn
+    <input type="radio" name="bunn" ${pizzaDiv.bread === 'Tykk' ? 'checked' : ''} onchange="setBread('Tykk')" />Tykk
+    <input type="radio" name="bunn" ${pizzaDiv.bread === 'Tynn' ? 'checked' : ''} onchange="setBread('Tynn')" />Tynn
     <br>
 
     Fyll: 
@@ -31,7 +31,8 @@ function updateView() {
     <br>
     <button ${isOrderReady() ? '' : 'disabled'} onclick="alert('Bestilt!');">Bestill</button><br>
     ${isOrderReady() ? 'Du har fylt ut alt og er klar til å bestille!' :/*html*/`
-    <div>Du har ikke valgt:</div><ul>
+    <div>Du har ikke valgt:</div>
+    <ul>
         ${isBreadSelected() ? '' : '<li>Bunn</li>'}
         ${isFillSelected() ? '' : '<li>Fyll</li>'}
         ${isStrSelected() ? '' : '<li>Størrelse</li>'}
@@ -40,3 +41,6 @@ function updateView() {
     `}
     `;
 }
+
+// Det over er en IF setning i viewet også kallt "Ternary Operator"
+// Statement ? true : false
