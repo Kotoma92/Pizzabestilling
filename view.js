@@ -29,7 +29,7 @@ function updateView() {
     <input type="radio" name="type" ${pizzaDiv.shape === 'Firkantet' ? 'checked' : ''} onchange="setShape('Firkantet')"/>Firkantet
     <input type="radio" name="type" ${pizzaDiv.shape === 'Rund' ? 'checked' : ''} onchange="setShape('Rund')"/>Rund
     <br>
-    <button ${isOrderReady() ? '' : 'disabled'} onclick="alert('Bestilt!');">Du har bestillt en ${pizzaDiv.str} pizza med ${pizzaDiv.bread} Bunn, ${pizzaDiv.fill} som er ${pizzaDiv.shape}</button><br>
+    <button ${isOrderReady() ? '' : 'disabled'} onclick="alert('Bestilt!');">Du har bestillt en ${pizzaDiv.str} pizza med ${pizzaDiv.bread} Bunn, ${pizzaDiv.fill} som er ${pizzaDiv.shape}!</button><br>
     ${isOrderReady() ? 'Du har fylt ut alt og er klar til å bestille!' :/*html*/`
     <div>Du har ikke valgt:</div>
     <ul>
