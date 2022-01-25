@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+  
+    <script>
+        var btnBestill = document.getElementById('bestill');
+        var infoDiv = document.getElementById('info');
+        var bunnTykk = document.getElementById('tykkBunn');
+        var bunnTynn = document.getElementById('tynnBunn');
+        var fyllTaco = document.getElementById('fyllTaco');
+        var fyllKylling = document.getElementById('fyllKylling');
+        var fyllPepperoni = document.getElementById('fyllPepperoni');
+        var strStor = document.getElementById('stor');
+        var strMiddels = document.getElementById('middels');
+        var strLiten = document.getElementById('liten');
+
+        function info() {
+            if ((bunnTykk.checked || bunnTynn.checked) &&
+                (fyllTaco.checked || fyllKylling.checked || fyllPepperoni.checked) &&
+                (strStor.checked || strMiddels.checked || strLiten.checked)) {
+                infoDiv.innerHTML = 'Du har fylt ut alt og er klar til å bestille!';
+                btnBestill.disabled = false;
+            } else {
+                infoDiv.innerHTML = 'Du har ikke valgt:';
+                //if (bunnTykk.checked || bunnTynn.checked) {                    
+                //} else {
+                //    infoDiv.innerHTML += '<li>bunn</li>';
+                //}
+                if (!bunnTykk.checked && !bunnTynn.checked) {
+                    infoDiv.innerHTML += '<li>bunn</li>';
+                }
+                if (!fyllTaco.checked && !fyllKylling.checked && !fyllPepperoni.checked) {
+                    infoDiv.innerHTML += '<li>fyll</li>';
+                }
+                if (!strStor.checked && !strMiddels.checked && !strLiten.checked) {
+                    infoDiv.innerHTML += '<li>størrelse</li>';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
