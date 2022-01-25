@@ -1,2 +1,6 @@
-const app = document.getElementById("app");
-var infoDiv = "";
+var pizzaDiv = {
+    bread:'',
+    fill:'',
+    str:'',
+    shape:'',
+};

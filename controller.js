@@ -1,30 +1,32 @@
-function info(selected) {
-    console.log(selected);
-
-    if ((selected == 'Tykk' || selected == 'Tynn') &&
-        (selected == 'Taco' || selected == 'Kylling' || selected == 'Pepperoni' || selected == 'Biff') &&
-        (selected == 'Stor' || selected == 'Middels' || selected == 'Liten') &&
-        (selected == 'Firkantet' || selected == 'Rund')) {
-        infoDiv = 'Du har fylt ut alt og er klar til å bestille!';
-        btnBestill.disabled = false;
-     } else {
-        infoDiv = 'Du har ikke valgt:';
-        if (!selected == 'Tykk' && !selected == 'Tynn'){
-            infoDiv += '<li>bunn</li>';
-        }
-        if (!selected == 'Taco' && !selected == 'Kylling' && !selected == 'Pepperoni' && !selected == 'Biff'){
-            infoDiv += '<li>fyll</li>';
-        }
-        if (!selected == 'Stor' && !selected == 'Middels' && !selected == 'Liten'){
-            infoDiv += '<li>størrelse</li>';
-        }
-        if (!selected == 'Firkantet' && !selected == 'Rund'){
-            infoDiv += '<li>type</li>';
-        }
-    }
-    showTopping();
+const isOrderReady = () => {
+    return pizzaDiv.bread && pizzaDiv.fill && pizzaDiv.str && pizzaDiv.shape;
+}
+const isBreadSelected = () => {
+    return pizzaDiv.bread;
+}
+const isFillSelected = () => {
+    return pizzaDiv.fill;
+}
+const isStrSelected = () => {
+    return pizzaDiv.str;
+}
+const isShapeSelected = () => {
+    return pizzaDiv.shape;
 }
 
-function showTopping(){
-document.getElementById('showTopping').innerHTML = infoDiv;
-}
+const setBread = (value) => {
+    pizzaDiv.bread = value;
+    updateView();
+};
+const setFill = (value) => {
+    pizzaDiv.fill = value;
+    updateView();
+};
+const setStr = (value) => {
+    pizzaDiv.str = value;
+    updateView();
+};
+const setShape = (value) => {
+    pizzaDiv.shape = value;
+    updateView();
+};
